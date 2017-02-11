@@ -34,7 +34,7 @@ function run_command(command, options) {
   });
 }
 
-gulp.task('default', ['nopromise', 'promise', 'asynawait']);
+gulp.task('default', ['nopromise', 'promise', 'asynawait', 'await_ajax']);
 
 //-------- Running app using npm start
 gulp.task('nopromise', () => {
@@ -50,5 +50,10 @@ gulp.task('promise', () => {
  */
 gulp.task('asynawait', () => {
   run_command('node', ['--harmony-async-await', 'asynawait.js']);
+});
+
+
+gulp.task('await_ajax', () => {
+  run_command('node', ['--harmony-async-await', 'awaitajax.js']);
 });
 

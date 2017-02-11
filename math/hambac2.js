@@ -63,6 +63,7 @@ exports.findY = findY;
  * @param a
  * @param b
  * @param c
+ * @return {[[{Number}, {Number}], {Number}, {Number}]}
  */
 exports.gendata = (a,b,c) => {
 
@@ -86,5 +87,5 @@ exports.gendata = (a,b,c) => {
     x += step;
   }
 
-  return [xseries, yseries];
+  return [xseries, yseries, x1, x2];
 };

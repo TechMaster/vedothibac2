@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Phương trình bậc 2</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+<h1>Hàm tính phương trình bậc 2 sử dụng Async - Await và AJAX</h1>
+<form id="paramform">
+  a: <input type="text" name="a" value="1"><br>
+  b: <input type="text" name="b" value="10"><br>
+  c: <input type="text" name="c" value="7"><br><br>
+</form>
+<div id="result">
+  <span id="x1"></span><br>
+  <span id="x2"></span>
+</div>
+<button onclick="callMathService()">Calculate</button>
+<br><br>
+
+<img id="graph" src="{{ filePath }}" width="1000" height="500">
+<script>
+  function callMathService() {
+    var str = $("#paramform").serialize();
+    $.ajax({
+      type: 'POST',
+      url: "/",
+      data: str,
+      dataType: 'json',
+      success: function (data) {
+        $("#x1").text('x1= '.concat(data.x1));
+        $("#x2").text('x2= '.concat(data.x2));
+        $("#graph").attr("src", data.filePath);
+      }
+    })
+  }
+</script>
+</body>
+</html>
