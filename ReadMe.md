@@ -131,11 +131,37 @@ async await giúp viết code dễ hiểu hơn một chút so với Promise.then
 Với Promise thì hàm xử lý lại nối chuỗi .then().then().then().
 Còn async await viết hàm async nhưng phong cách tuần tự từng dòng lệnh như là viết hàm sync.
 
+```javascript
+//Phong cách Promise
+renderChart(a, b, c)
+  .then((x1, x2, filePath) => {  
+  
+  })
+
+//Phong cách async await nhìn thân thương hơn nhiều
+[x1, x2, filePath] = await renderChart(a, b, c);
+```
+
 #AJAX
 Đây là cách hợp lý nhất về trải nghiệm người dùng, nghiệm trả về và đồ thị là kết quả trả về của lời gọi AJAX.
 Form sẽ không phải load.
 
 Xem ví dụ [awaitajax.js](https://github.com/TechMaster/vedothibac2/blob/master/awaitajax.js) và 
-[views/index3.html](https://github.com/TechMaster/vedothibac2/blob/master/view/index3.html)
+[views/index3.html](https://github.com/TechMaster/vedothibac2/blob/master/views/index3.html)
+
+```javascript
+ var str = $("#paramform").serialize();  //ghép giá trị các trường trong form thành một chuỗi
+    $.ajax({
+      type: 'POST',
+      url: "/",  //địa chỉ server
+      data: str,
+      dataType: 'json',  //Kiểu dữ liệu mong muốn là JSON
+      success: function (data) {  //Hàm hứng sự kiện trả về
+        $("#x1").text('x1= '.concat(data.x1));
+        $("#x2").text('x2= '.concat(data.x2));
+        $("#graph").attr("src", data.filePath);
+      }
+    })
+```
 
 
