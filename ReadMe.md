@@ -124,8 +124,8 @@ function renderChart(a, b, c) {
 ```
 
 ## Async Await
-Trong Node.js 7.x, async await chỉ là tính năng thử nghiệm phải có option --harmony-async-await khi chạy. Tháng 4/2017, bản Node.js 8.x async-await sẽ được sử dụng 
-chính thức.
+Trong Node.js phiên bản trước 7.6, async await chỉ là tính năng thử nghiệm phải có option --harmony-async-await khi chạy.
+Từ phiên bản 7.6 sau nay, [https://github.com/nodejs/node/blob/master/doc/changelogs/CHANGELOG_V7.md#7.6.0](async await được hỗ trợ do Node.js đã sử dụng V8 Engine version 5.5)
 
 async await giúp viết code dễ hiểu hơn một chút so với Promise.then. Nếu callback thì hàm xử lý kết quả lồng nhau (nest call back).
 Với Promise thì hàm xử lý lại nối chuỗi .then().then().then().

@@ -49,11 +49,14 @@ gulp.task('promise', () => {
  * Để chạy tính năng async - await cần có option --harmony-async-await
  */
 gulp.task('asynawait', () => {
-  run_command('node', ['--harmony-async-await', 'asynawait.js']);
+  //run_command('node', ['--harmony-async-await', 'asynawait.js']);
+  run_command('node', ['asynawait.js']);
 });
 
 
 gulp.task('await_ajax', () => {
-  run_command('node', ['--harmony-async-await', 'awaitajax.js']);
+  //remove --harmony-async-await option if you use Node.js version 7.6.0 or later
+  //run_command('node', ['--harmony-async-await', 'awaitajax.js']);
+  run_command('node', ['awaitajax.js']);
 });
 

@@ -4,7 +4,7 @@
   "description": "Vẽ đồ thị bậc 2",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "gulp",
     "test": "mocha -S"
   },
   "keywords": [
